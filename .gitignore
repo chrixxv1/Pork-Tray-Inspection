@@ -1,0 +1,8 @@
+# Dataset is not committed (240 MB, CC BY 4.0; see README)
+data/*
+!data/README.md
+results/cache/
+__pycache__/
+*.egg-info/
+.pytest_cache/
+.ipynb_checkpoints/
