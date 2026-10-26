@@ -1,0 +1,16 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "porkqc"
+version = "0.1.0"
+description = "Tray-level pass/fail inspection of packaged pork rashers"
+requires-python = ">=3.10"
+dependencies = ["numpy", "pillow"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
