@@ -7,7 +7,7 @@ name = "porkqc"
 version = "0.1.0"
 description = "Tray-level pass/fail inspection of packaged pork rashers"
 requires-python = ">=3.10"
-dependencies = ["numpy", "pillow", "scikit-image"]
+dependencies = ["numpy", "pillow", "scikit-image", "scikit-learn"]
 
 [tool.setuptools.packages.find]
 where = ["src"]
