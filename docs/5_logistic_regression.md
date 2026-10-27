@@ -1,4 +1,4 @@
-# Phase 5: Logistic regression with Newton's method and gradient descent
+# Logistic regression with Newton's method and gradient descent
 
 Notebook: `notebooks/5_logistic.ipynb`. Code: `src/porkqc/logistic.py`, `src/porkqc/model.py`.
 
