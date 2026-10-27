@@ -4,10 +4,14 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "porkqc"
-version = "0.1.0"
-description = "Tray-level pass/fail inspection of packaged pork rashers"
+version = "1.0.0"
+description = "Tray-level pass/fail inspection of packaged pork rashers using HOG features, PCA via the SVD and logistic regression solved by Newton's method"
+readme = "README.md"
 requires-python = ">=3.10"
-dependencies = ["numpy", "scipy", "pillow", "scikit-image", "scikit-learn"]
+dependencies = ["numpy", "scipy", "pillow", "scikit-image", "scikit-learn", "matplotlib"]
+
+[project.optional-dependencies]
+dev = ["pytest", "pytest-html", "pdoc"]
 
 [tool.setuptools.packages.find]
 where = ["src"]
