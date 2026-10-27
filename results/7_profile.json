@@ -1,0 +1,181 @@
+{
+  "n_train": 3349,
+  "n_features": 5040,
+  "k": 50,
+  "latency_standard": {
+    "decode_ms": 12.22054049998178,
+    "hog_ms": 18.0491570000072,
+    "pca_and_classify_ms": 0.319821999994474,
+    "total_ms": 30.589519499983453,
+    "images_per_s": 32.69093520741772
+  },
+  "predict_flops": 509140,
+  "latency_draft": {
+    "decode_ms": 4.418402999988302,
+    "hog_ms": 21.974860999989687,
+    "pca_and_classify_ms": 0.41175100000145903,
+    "total_ms": 26.80501499997945,
+    "images_per_s": 37.306451796455505
+  },
+  "draft_speedup": 1.1411864347028684,
+  "draft_accuracy": {
+    "standard": [
+      0.7215700110176424,
+      0.009057462641293495,
+      0.784366576819407
+    ],
+    "draft": [
+      0.7194266402457133,
+      0.011164069879969138,
+      0.784366576819407
+    ],
+    "relative_feature_change": 0.16766376827137303
+  },
+  "peak_gflops": 35.060492596013695,
+  "bandwidth_gbs": 7.007610673970248,
+  "cache_bandwidth_gbs": 28.616397257136267,
+  "spectral_gap_rel": 0.011220096655765985,
+  "pca": {
+    "full": {
+      "time_s": 82.00536472199997,
+      "gflops_est": 526.604288552,
+      "achieved_gflop_s": 6.421583396857027
+    },
+    "randomized_q0": {
+      "time_s": 1.36393679899993,
+      "gflops_est": 4.099176,
+      "achieved_gflop_s": 3.0054002524205012,
+      "max_rel_sv_error": 0.05010409657362975,
+      "min_cosine": 0.02598903812879997,
+      "directions_cos_gt_0.99": 7
+    },
+    "randomized_q4": {
+      "time_s": 2.1575693249999404,
+      "gflops_est": 20.786184,
+      "achieved_gflop_s": 9.63407467799468,
+      "max_rel_sv_error": 0.003040661871293359,
+      "min_cosine": 0.3664974126075567,
+      "directions_cos_gt_0.99": 42
+    },
+    "randomized_q10": {
+      "time_s": 3.2478047810000135,
+      "gflops_est": 45.816696,
+      "achieved_gflop_s": 14.106973506545808,
+      "max_rel_sv_error": 0.00013351766027327365,
+      "min_cosine": 0.9887191270886921,
+      "directions_cos_gt_0.99": 49
+    }
+  },
+  "solvers": [
+    {
+      "k": 10,
+      "solver": "newton",
+      "iterations": 4,
+      "time_s": 0.010337585000115723,
+      "flops": 3983129.3333333335,
+      "ai": 0.6757663979297303,
+      "hessian_cond": 2.612781223038103
+    },
+    {
+      "k": 10,
+      "solver": "gd",
+      "iterations": 27,
+      "time_s": 0.01292024000008496,
+      "flops": 3978612.0,
+      "ai": 0.25,
+      "hessian_cond": 2.612781223038103
+    },
+    {
+      "k": 50,
+      "solver": "newton",
+      "iterations": 5,
+      "time_s": 0.022005171000046175,
+      "flops": 91845645.0,
+      "ai": 2.688705583756345,
+      "hessian_cond": 7.466277646698552
+    },
+    {
+      "k": 50,
+      "solver": "gd",
+      "iterations": 70,
+      "time_s": 0.053093117999878814,
+      "flops": 47823720.0,
+      "ai": 0.25,
+      "hessian_cond": 7.466277646698552
+    },
+    {
+      "k": 200,
+      "solver": "newton",
+      "iterations": 6,
+      "time_s": 0.44954213300002266,
+      "flops": 1676797074.0,
+      "ai": 10.379060913705583,
+      "hessian_cond": 21.358613884515854
+    },
+    {
+      "k": 200,
+      "solver": "gd",
+      "iterations": 237,
+      "time_s": 0.35335914699999194,
+      "flops": 638145252.0,
+      "ai": 0.25,
+      "hessian_cond": 21.358613884515854
+    },
+    {
+      "k": 400,
+      "solver": "newton",
+      "iterations": 8,
+      "time_s": 1.0146671279999282,
+      "flops": 9016551298.666666,
+      "ai": 20.981230715636507,
+      "hessian_cond": 172.00461217988226
+    },
+    {
+      "k": 400,
+      "solver": "gd",
+      "iterations": 2090,
+      "time_s": 8.22853973700012,
+      "flops": 11227053640.0,
+      "ai": 0.25,
+      "hessian_cond": 172.00461217988226
+    }
+  ],
+  "roofline": {
+    "peak_gflops": 35.060492596013695,
+    "bandwidth_gbs": 7.007610673970248,
+    "cache_bandwidth_gbs": 28.616397257136267,
+    "kernels": {
+      "GD iteration (2 mat-vec)": {
+        "ai": 0.25,
+        "gflop_s": 4.412783712534069,
+        "time_s": 0.00015482200001315505,
+        "working_set_mb": 1.366392
+      },
+      "Hessian A^T diag(s) A": {
+        "ai": 4.291666666666667,
+        "gflop_s": 12.264508608498499,
+        "time_s": 0.0014344070000333886,
+        "working_set_mb": 1.366392
+      },
+      "Randomized-SVD pass X \u03a9": {
+        "ai": 14.735992959812261,
+        "gflop_s": 21.67200280956543,
+        "time_s": 0.09346045300003425,
+        "working_set_mb": 135.03168
+      },
+      "Inference projection": {
+        "ai": 0.24278846153846154,
+        "gflop_s": 4.980773176511181,
+        "time_s": 0.00010220100011792965,
+        "working_set_mb": 2.016
+      }
+    }
+  },
+  "memory_bytes": {
+    "HOG training matrix (n x d)": 135031680,
+    "PCA components (k x d)": 2016000,
+    "PCA mean (d)": 40320,
+    "Classifier weights (k + 1)": 408,
+    "One 720 x 540 RGB image as float64": 9331200
+  }
+}

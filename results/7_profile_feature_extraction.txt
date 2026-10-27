@@ -1,0 +1,20 @@
+         46934 function calls (46928 primitive calls) in 0.989 seconds
+
+   Ordered by: cumulative time
+   List reduced from 240 to 12 due to restriction <12>
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+      3/2    0.000    0.000    0.986    0.493 /usr/local/lib/python3.13/dist-packages/IPython/core/interactiveshell.py:3512(run_code)
+      3/2    0.000    0.000    0.986    0.493 {built-in method builtins.exec}
+        1    0.001    0.001    0.897    0.897 /tmp/ipykernel_2190/1118603354.py:1(<cell line: 0>)
+       20    0.006    0.000    0.602    0.030 /content/drive/MyDrive/MMA3001 Project/Pork-Tray-Inspection/src/porkqc/features.py:83(hog_features)
+       20    0.114    0.006    0.358    0.018 /content/drive/MyDrive/MMA3001 Project/Pork-Tray-Inspection/src/porkqc/features.py:35(load_image)
+       20    0.012    0.001    0.338    0.017 /usr/local/lib/python3.13/dist-packages/skimage/_shared/utils.py:440(fixed_func)
+       20    0.162    0.008    0.325    0.016 /usr/local/lib/python3.13/dist-packages/skimage/feature/_hog.py:48(hog)
+       20    0.046    0.002    0.211    0.011 /content/drive/MyDrive/MMA3001 Project/Pork-Tray-Inspection/src/porkqc/features.py:64(_resize)
+     2800    0.080    0.000    0.158    0.000 /usr/local/lib/python3.13/dist-packages/skimage/feature/_hog.py:7(_hog_normalize_block)
+       20    0.002    0.000    0.106    0.005 /usr/local/lib/python3.13/dist-packages/PIL/Image.py:931(convert)
+       40    0.001    0.000    0.089    0.002 /usr/local/lib/python3.13/dist-packages/PIL/ImageFile.py:273(load)
+     5640    0.087    0.000    0.087    0.000 {method 'reduce' of 'numpy.ufunc' objects}
+
+
