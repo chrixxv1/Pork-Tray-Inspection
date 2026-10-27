@@ -30,3 +30,15 @@ def tiny_coco(tmp_path):
     }
     (tmp_path / "_annotations.coco.json").write_text(json.dumps(coco))
     return tmp_path
+
+
+@pytest.fixture
+def logistic_data():
+    """Non-separable two-class data with known structure: n=400, d=5."""
+    import numpy as np
+
+    rng = np.random.default_rng(1)
+    X = rng.standard_normal((400, 5))
+    w_true = np.array([2.0, -1.0, 0.5, 0.0, 0.0])
+    y = (rng.random(400) < 1 / (1 + np.exp(-(X @ w_true + 0.3)))).astype(float)
+    return X, y
